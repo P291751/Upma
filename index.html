@@ -1,137 +1,150 @@
-<!DOCTYPE html>
-<html>
-    <head>
+<!DOCTYPE html><html>
+<head>
     <title>Font Styles</title>
     <style>
         body {
-            margin:0;
-            font-family: 'segoe UI', sans-serif;
-    background: linear-gradient(to botto,midnightbluem,slateblue , lightsteelblue);
-coloi: white;
-padding: 40px;          
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to bottom, midnightblue, slateblue, lightsteelblue);
+            color: white;
+            padding: 40px;
+        }h1 {
+        text-align: center;
+        color: lavender;
+        text-shadow: 2px 2px 4px black;
+        margin-bottom: 50px;
+    }
+
+    .gallery-box {
+        max-width: 700px;
+        margin: auto;
+        background-color: ghostwhite;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 8px 16px gray;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .gallery-box h2 {
+        color: darkslateblue;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .gallery-container {
+        display: flex;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+    }
+
+    .gallery-container img {
+        width: 300px;
+        margin-right: 15px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px gray;
+        transition: transform 0.3s;
+    }
+
+    .gallery-container img:hover {
+        transform: scale(1.05);
+    }
+
+    .scroll-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: lightgray;
+        color: black;
+        font-size: 24px;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 50%;
+        border: none;
+    }
+
+    .scroll-btn:hover {
+        background-color: silver;
+    }
+
+    .scroll-left {
+        left: 10px;
+    }
+
+    .scroll-right {
+        right: 10px;
+    }
+
+    .scroll-strip {
+        overflow: hidden;
+        white-space: nowrap;
+        width: 100%;
+        position: relative;
+        margin-top: 60px;
+        height: 160px;
+    }
+
+    .scrolling-content {
+        display: inline-block;
+        white-space: nowrap;
+        animation: scroll-left 40s linear infinite;
+    }
+
+    .scrolling-content img {
+        height: 150px;
+        width: 250px;
+        margin-right: 20px;
+        border-radius: 10px;
+        display: inline-block;
+        transition: transform 0.3s;
+    }
+
+    .scrolling-content img:hover {
+        transform: scale(1.1);
+    }
+
+    @keyframes scroll-left {
+        0% {
+            transform: translateX(0%);
         }
- h1 {
-     text-align:center;
-     color:lavender;
-     text-shadow: 2px 2px 4px black;
-     margin-bottom: 50px;
- }
- .gallery-box {
-     max-width: 700px;
-     margin: auto;
-     background-color: goshtwhite;
-     padding: 20px;
-     border-radius: 15px;
-     box-shadow: 0 8px 16px gray;
-     position: relative;
-     overflow: hidden;
- }
- .gallery-box h2 {
-     color: darkslateblue;
-     text-align: center;
-     margin-bottom: 15px;
- }
- .gallery-container {
-     display: flex;
-     overflow-x: auto;
-     scroll-behavior: smooth;
- }
- .gallery-container img {
-     width: 300px;
-     margin-right: 15px;
-     border-radius: 10px;
-     box-shadow: 0 4px 8px gray;
-     transition: transform 0.3s;
- }
- .gallery-container img:hover {
- transform: scale(1.05);    
- }
- .scroll-btn {
-     position: absolute;
-     top: 50%;
-   transfrom: translateY(-50%);
-   background-color: lightgray;
-   color:black;
-   font-size: 24px;
-   padding: 10px;
-   cursor: pointer;
-   border-radius: 50%;
-   border: none;
- }
- .scroll-btn:hover {
-     background-color: silver;
- }
- .scroll-left {
-     left: 10px;
- }
- .scroll-right {
-     right: 10px;
- }
- .scroll-strip {
-  overflow: hidden;
-  white-space: nowrap;
-  width: 100%;
-  position: relative;
-  margin-top: 60px;
-  height: 160px;
- }
- .scrolling-content {
-     display: inline-block;
-     white-space: nowrap;
-     animation: scroll-left 40s linear infinite;
- }
- .scrolling-content img {
-     heighr: 150px;
-     width: 250px;
-     margin-right: 20px;
-     border-radius: 10px;
-     display: inline-block;
-     transition: transform 0.3s;
- }
- .scrolling-content img:hover {
-     transform: scale(1.1);
- }
- @keyframes scroll-left {
-     0%{
-     transform: translateX(0%);
- }
- 100% {
- transfrom: translateX(-50%);
- }    
- }
-    </style>
-    </head>
-    <body>
-  <h1>Moonlight Image Showcase</h1>
-  <div class="gallery-box">
-  <h2>Manual Image Gallery</h2>
-  <button class="scroll-btnscroll-left" onclick="scrollGallery(-320)">&#8592;</button>
-  <div class="gallery-container" id="gallery">
- <img src="moon1.jpg">
- <img src="moon2.jpg">
- <img src="moon3.jpg">
- <img src="moon4.jpg">
-  </div>
- <button class="scroll-btnscroll-right" onclick="scrollGallery(320)">&#8594;</button>
-  </div>
-  <div class="scrolling-strip">
-  <div class="scrolling-content">
-    <img src="moon5.jpg">
-    <img src="moon6.jpg">
-    <img src="moon7.jpg">
-    <img src="moon8.jpg">
-    
-    <img src="moon5.jpg">
-    <img src="moon6.jpg">
-    <img src="moon7.jpg">
-    <img src="moon8.jpg">
-  </div>
-  </div>
-  <script>
-      Function scrollGallery(amount) {
-          const gallery =document.getElementbyId("gallery");
-     gallery.scrollBy({left:amount,behavior:"smooth"};)
-      }
-  </script>
-    </body>
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+</style>
+
+</head>
+<body>
+    <h1>Moonlight Image Showcase</h1>
+    <div class="gallery-box">
+        <h2>Manual Image Gallery</h2>
+        <button class="scroll-btn scroll-left" onclick="scrollGallery(-320)">&#8592;</button>
+        <div class="gallery-container" id="gallery">
+            <img src="moon1.jpg">
+            <img src="moon2.jpg">
+            <img src="moon3.jpg">
+            <img src="moon4.jpg">
+        </div>
+        <button class="scroll-btn scroll-right" onclick="scrollGallery(320)">&#8594;</button>
+    </div><div class="scroll-strip">
+    <div class="scrolling-content">
+        <img src="moon5.jpg">
+        <img src="moon6.jpg">
+        <img src="moon7.jpg">
+        <img src="moon8.jpg">
+        <img src="moon5.jpg">
+        <img src="moon6.jpg">
+        <img src="moon7.jpg">
+        <img src="moon8.jpg">
+    </div>
+</div>
+
+<script>
+    function scrollGallery(amount) {
+        const gallery = document.getElementById("gallery");
+        gallery.scrollBy({ left: amount, behavior: "smooth" });
+    }
+</script>
+
+</body>
 </html>
